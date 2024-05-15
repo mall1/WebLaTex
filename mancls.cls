@@ -17,7 +17,7 @@
 \RequirePackage{tikz}
 \RequirePackage{geometry}
 
-\newfontfamily\Consolas{Consolas}
+\newfontfamily\Consolas{consola.ttf}
 \lstset{basicstyle=\Consolas}
 
 %提供绘制逻辑流程图的tikz样式
@@ -34,7 +34,7 @@
     \newgeometry{bottom=0mm,top=0mm,right=0mm,left=0mm}
     \begin{figure}[h]
         \centering
-}{
+        }{
     \end{figure}
     \restoregeometry
     \newpage
@@ -61,12 +61,12 @@
     \pagebreak
     \hspace{0pt}
     \vfill
-\begin{center}
-    {\Centering \songti \zihao{1} \textbf{\@title}}
-\end{center}
-\begin{center}
-    {\songti \fontsize{48}{72} \selectfont \textbf{\suffix}}
-\end{center}
+    \begin{center}
+        {\Centering \songti \zihao{1} \textbf{\@title}}
+    \end{center}
+    \begin{center}
+        {\songti \fontsize{48}{72} \selectfont \textbf{\suffix}}
+    \end{center}
     \vfill
     \hspace{0pt}
     \thispagestyle{empty}
@@ -86,14 +86,15 @@
 }
 
 \ifdefined \noheaders
-%清除页眉页脚
-\pagestyle{empty}
+    %清除页眉页脚
+    \pagestyle{empty}
 \else
-%定义页眉页脚样式
-\pagestyle{fancy}
-\fancyhf{}
-\chead{\@title}
-\rhead{第\thepage 页}
+    %定义页眉页脚样式
+    \pagestyle{fancy}
+    \fancyhf{}
+    \chead{\@title}
+    \rhead{第\thepage 页}
+    
 \fi
 %提供有行号和无行号的两个listings样式
 \lstdefinelanguage{Praat}{
@@ -123,11 +124,11 @@
 }
 %为源码文件调整每页行数，效果大约是每页55行，取消缩进
 \ifdefined \codedoc
-\geometry{
-    textheight=42\baselineskip,
-    paper=a4paper
-}
-\setlength{\parindent}{0em}
-\renewcommand{\baselinestretch}{0.995}
+    \geometry{
+        textheight=42\baselineskip,
+        paper=a4paper
+    }
+    \setlength{\parindent}{0em}
+    \renewcommand{\baselinestretch}{0.995}
 \fi
 
